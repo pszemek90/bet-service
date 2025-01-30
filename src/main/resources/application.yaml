@@ -1,6 +1,6 @@
 logging:
   level:
-    root: trace
+    org.springframework: trace
 spring:
   application:
     name: Bet Service
@@ -8,4 +8,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://127.0.0.1:9000
+          issuer-uri: http://betting-auth-server
