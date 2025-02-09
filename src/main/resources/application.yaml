@@ -11,4 +11,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://betting-auth-server
+          issuer-uri: http://authorization-server
