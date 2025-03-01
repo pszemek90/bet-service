@@ -12,3 +12,15 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://authorization-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    health:
+      show-details: always
