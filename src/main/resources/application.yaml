@@ -16,11 +16,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
-  metrics:
-    export:
-      prometheus:
-        enabled: true
+        include: health, prometheus, metrics
   endpoint:
     health:
       show-details: always
