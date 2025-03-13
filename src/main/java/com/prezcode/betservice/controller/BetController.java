@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 @RestController
@@ -36,5 +38,10 @@ public class BetController {
     public Mono<Void> memoryLeak() {
         memoryLeakList.add(new byte[128 * 1024]);
         return Mono.empty();
+    }
+
+    @GetMapping("/latency")
+    public Mono<Void> randomLatency() {
+        return Mono.delay(Duration.ofMillis(ThreadLocalRandom.current().nextLong(0,5000))).then();
     }
 }
